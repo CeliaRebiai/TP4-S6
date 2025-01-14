@@ -1,6 +1,6 @@
 name: GitHub Actions Demo
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-on: [push]
+on: [workflow_dispatch]
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
@@ -29,6 +29,8 @@ jobs:
               node-version: ">=22"
           - name: Set github user
             run: git config user.celia.rebiai@etu.cyu.fr "test@example.com" && git config user.celia "CI/CD - MMI"
-          - name: release
+          - name: install dependance 
+            run : npm ci
+          - name : release
             run : npm run release --ci
       
